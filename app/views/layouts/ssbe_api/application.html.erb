@@ -3,12 +3,13 @@
 <head>
   <title>SsbeApi</title>
   <%= stylesheet_link_tag    "ssbe_api/application", :media => "all" %>
-  <%= javascript_include_tag "ssbe_api/application" %>
+  <%= javascript_include_tag "http://chrome.#{FQDN}/assets/application.js" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <%= yield %>
 
+<%= javascript_include_tag "ssbe_api/application" %>
 </body>
 </html>
