@@ -1,0 +1,9 @@
+#header 
+  .swagger-ui-wrap
+    Documentation goes here
+
+#messsage-bar.swagger-ui-wrap
+
+#swagger-ui-container.swagger-ui.wrap
+  - Rails.application.routes.named_routes.each do |route|
+    .route= route.inspect
