@@ -4,10 +4,14 @@ module SsbeApi
     def group_routes_by_controller
       Rails.application.routes.routes.named_routes.map do |k, v| 
         v.defaults.merge({
-          :request_method => v.constraints[:request_method],
+          :request_method => format_verb(v.verb),
           :path => v.path.spec
         })
-      end.group_by { |path| path[:controller] }
+      end.compact.group_by { |path| path[:controller] }
+    end
+
+    def format_verb(verb)
+      verb.inspect.gsub(/\W+/, '')
     end
 
     def controllers

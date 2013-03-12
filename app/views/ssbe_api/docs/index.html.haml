@@ -8,7 +8,20 @@
   #resources-container.container
     %ul#resources
       - group_routes_by_controller.each do |controller, actions|
-        %li.resource
+        %li.resource{:id => "resource_#{controller}"}
           .heading
             %h2 
               %a= "/#{controller}"
+          %ul.endpoints
+            %li.endpoint
+              %ul.operations
+                - actions.each do |action|
+                  %li{:class => "operation #{action[:request_method].downcase}"}
+                    .heading
+                      %h3
+                        %span.http_method
+                          %a= action[:request_method]
+                        %span.path
+                          %a= action[:path]
+
+
