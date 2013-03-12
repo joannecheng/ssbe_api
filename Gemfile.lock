@@ -126,6 +126,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  haml
   rspec-rails
   sqlite3
   ssbe_api!
