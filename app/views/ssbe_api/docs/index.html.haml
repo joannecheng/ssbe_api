@@ -1,9 +1,14 @@
 #header 
   .swagger-ui-wrap
-    Documentation goes here
+    %a#logo{:href => FQDN } SSBE Documentation
 
 #messsage-bar.swagger-ui-wrap
 
-#swagger-ui-container.swagger-ui.wrap
-  - Rails.application.routes.named_routes.each do |route|
-    .route= route.inspect
+#swagger-ui-container.swagger-ui-wrap
+  #resources-container.container
+    %ul#resources
+      - group_routes_by_controller.each do |controller, actions|
+        %li.resource
+          .heading
+            %h2 
+              %a= "/#{controller}"
