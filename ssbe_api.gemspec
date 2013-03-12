@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = SsbeApi::VERSION
   s.authors     = ["Joanne Cheng"]
   s.email       = ["jcheng@absolute-performance.com"]
-  s.homepage    = "TODO"
+  s.homepage    = "http://github.com/absperf/ssbe_api"
   s.summary     = "engine for API documentation"
   s.description = "Mountable engine for API documentation sites"
 
