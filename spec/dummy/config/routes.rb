@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  resource :clients
   mount SsbeApi::Engine => "/ssbe_api"
+  resources :clients
 end
