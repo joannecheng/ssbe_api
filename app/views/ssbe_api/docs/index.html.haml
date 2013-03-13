@@ -15,6 +15,7 @@
           %ul.endpoints
             %li.endpoint
               %ul.operations
+
                 - actions.each do |action|
                   %li{:class => "operation #{action[:request_method].downcase}"}
                     .heading
