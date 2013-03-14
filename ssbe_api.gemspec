@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = "engine for API documentation"
   s.description = "Mountable engine for API documentation sites"
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.mkdn"]
   s.test_files = Dir["test/**/*"]
 
   s.add_development_dependency 'rspec-rails'
