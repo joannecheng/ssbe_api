@@ -1,3 +1,27 @@
-= SsbeApi
+# SSBE API 
 
-This project rocks and uses MIT-LICENSE.
+SSBE API is a rails engine that generates a documentation page for your application's routes.
+
+Installation
+------
+Add this line to your Gemfile:
+
+```
+gem 'ssbe_api', :git => 'git://github.com/absperf/ssbe_api'
+```
+
+Run:
+
+```
+bundle install
+```
+
+Then go into your routes and add:
+
+```ruby
+mount SsbeApi::Engine => "/docs" # you can change 'docs' to any route you want.
+```
+
+Start your rails app. You can navigate to "/docs" (or the route name you set) and see something like this:
+
+![](screen1.png)
