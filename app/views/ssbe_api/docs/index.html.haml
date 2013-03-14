@@ -24,5 +24,7 @@
                           %a= action[:request_method]
                         %span.path
                           %a= action[:path]
+                      %ul.options
+                        %li= comments(action).first
 
 

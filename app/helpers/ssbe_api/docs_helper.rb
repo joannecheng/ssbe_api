@@ -15,5 +15,17 @@ module SsbeApi
       verb.inspect.gsub(/\W+/, '')
     end
 
+    def comments(route)
+      begin
+        controller_class(route[:controller]).constantize.instance_method(route[:action]).comment.split('\n')
+      rescue
+        ['']
+      end
+    end
+
+    def controller_class(controller)
+      controller.split('_').map(&:capitalize).join('').pluralize + "Controller"
+    end
+
   end
 end

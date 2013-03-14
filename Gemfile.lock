@@ -3,6 +3,7 @@ PATH
   specs:
     ssbe_api (0.0.1)
       haml
+      method_source
       rails (~> 3.2.12)
 
 GEM
@@ -59,6 +60,7 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    method_source (0.8.1)
     mime-types (1.21)
     multi_json (1.6.1)
     nokogiri (1.5.6)
