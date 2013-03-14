@@ -21,10 +21,9 @@ describe "docs/index.html" do
 
     it 'lists paths for all CRUD operations for clients resource' do
       visit docs_path
-      puts page.body
       within '#resource_clients' do
         page.should have_content '/clients'
-        page.should have_content '/clients/:id(.format)'
+        page.should have_content '/clients/:id(.:format)'
       end
     end
 
