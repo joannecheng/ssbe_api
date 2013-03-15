@@ -37,4 +37,13 @@ describe "docs/index.html" do
       end
     end
   end
+
+  it 'lists out descriptions for operations' do
+    visit docs_path
+    puts page.body
+    within '#resource_clients' do
+      page.should have_content 'gets a collection of clients'
+      page.should have_content 'gets a single clients by id'
+    end
+  end
 end
