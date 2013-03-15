@@ -17,7 +17,7 @@ module SsbeApi
 
     def comments(route)
       begin
-        controller_class(route[:controller]).constantize.instance_method(route[:action]).comment.split('\n')
+        controller_class(route[:controller]).constantize.instance_method(route[:action]).comment.gsub('#','').split('\n')
       rescue
         ['']
       end
