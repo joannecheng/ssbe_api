@@ -1,0 +1,22 @@
+%li{:class => "operation #{action[:request_method].downcase}"}
+  .heading
+    %h3
+      %span.http_method
+        %a= action[:request_method]
+      %span.path
+        %a= action[:path]
+    %ul.options
+      %li= comments.summary
+  .content
+    %p= comments(action).return
+    %table.fullwidth
+      %thead
+        - unless comments.params.empty?
+          %tr 
+            %th Parameter
+            %th Description
+      %tbody.operation-params
+        %tr
+          - comments.params.each do |param_name, param_value|
+            %td= param_name
+            %td= param_value
