@@ -26,5 +26,15 @@
                           %a= action[:path]
                       %ul.options
                         %li= comments(action).summary
-
-
+                    .content
+                      %p= comments(action).return
+                      %table.fullwidth
+                        %thead
+                          %tr 
+                            %th Parameter
+                            %th Description
+                          
+                          %tr
+                            - comments(action).params.each do |param_name, param_value|
+                              %td= param_name
+                              %td= param_value

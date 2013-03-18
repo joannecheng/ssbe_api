@@ -17,6 +17,7 @@ class MethodComments
     params_hash = {}
     params_line_regex = /@param\s+?(\w+)\s+?-\s+?(.+)/
     middle_lines = @comments[1..-2]
+    return params_hash if middle_lines.nil?
 
     param_strings = middle_lines.select { |line| line =~ /@param/}
     param_strings.each{ |param_string| params_hash.merge!(Hash[*param_string.scan(params_line_regex).flatten]) }
