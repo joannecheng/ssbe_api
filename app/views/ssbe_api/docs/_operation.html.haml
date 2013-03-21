@@ -16,7 +16,7 @@
             %th Parameter
             %th Description
       %tbody.operation-params
-        %tr
-          - comments.params.each do |param_name, param_value|
+        - comments.params.each do |param_name, param_value|
+          %tr
             %td= param_name
             %td= param_value
