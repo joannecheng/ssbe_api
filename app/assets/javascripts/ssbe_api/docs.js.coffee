@@ -8,6 +8,7 @@ class Docs
 
   initializeEventHandlers: =>
     $('.heading').click (event) ->
+      event.preventDefault()
       $(@).parent().find('.content').toggle()
 
 $ ->
