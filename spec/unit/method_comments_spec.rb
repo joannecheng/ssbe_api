@@ -38,6 +38,13 @@ describe MethodComments do
         mc = MethodComments.new string
         mc.params.should == {'id' => 'escalation id', 'test_param[blaah]' => 'testing hash parameters'}
       end
+
+      it 'properly parses parameters if there is no last line' do
+        string = "# Escalation collection\n#\n\# @param id - escalation id\n # @param test_param[blaah] - testing hash parameters\n\n"
+        mc = MethodComments.new string
+        mc.params.should == {'id' => 'escalation id', 'test_param[blaah]' => 'testing hash parameters'}
+      end
+
     end
 
     context 'no params' do
