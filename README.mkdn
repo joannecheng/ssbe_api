@@ -28,6 +28,12 @@ Start your rails app. You can navigate to "/docs" (or the route name you set) an
 
 Writing Documentation
 ------
+
+Your documentation must be written as comments above your controller method. It should look like the following:
+* Description of controller action
+* (optional) parameters in the following format `@param param_name - param description`
+* What the controller returns
+
 Here's an example of what your documentation should look like:
 ```ruby
 class YourController < ApplicationController
@@ -40,9 +46,4 @@ class YourController < ApplicationController
     @something = Something.all()
     ...
 ```
-
-Your documentation must be written as comments above your controller method. It should look like the following:
-* Description of controller action
-* (optional) parameters in the following format `@param param_name - param description`
-* What the controller returns
 
