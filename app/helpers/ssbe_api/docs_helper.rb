@@ -7,7 +7,7 @@ module SsbeApi
           :request_method => format_verb(route.constraints[:request_method]),
           :path => route.path.spec
         })
-      end.reject { |path| path[:request_method].nil? || path[:controller].nil? }.group_by { |path| path[:controller] }
+      end.reject { |path| path[:request_method].nil? || path[:controller].nil? }.group_by { |path| path[:controller] }.sort 
     end
 
     def format_verb(verb)
