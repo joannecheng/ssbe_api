@@ -25,3 +25,24 @@ mount SsbeApi::Engine => "/docs" # you can change 'docs' to any route you want.
 Start your rails app. You can navigate to "/docs" (or the route name you set) and see something like this:
 
 ![](screen1.png)
+
+Writing Documentation
+------
+Here's an example of what your documentation should look like:
+```ruby
+class YourController < ApplicationController
+
+  # Gets a collection of a bunch of things
+  # @param param - an optional parameter to filter out your collection of a bunch of things
+  # Returns entire collection of something
+
+  def index
+    @something = Something.all()
+    ...
+```
+
+Your documentation must be written as comments above your controller method. It should look like the following:
+* Description of controller action
+* (optional) parameters in the following format `@param param_name - param description`
+* What the controller returns
+
