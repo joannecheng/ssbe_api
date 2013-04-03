@@ -32,6 +32,12 @@ describe MethodComments do
         mc = MethodComments.new string
         mc.params.should == {'id' => 'escalation id', 'test_param' => 'testing parameters'}
       end
+
+      it 'properly parses parameters' do
+        string = "# Escalation collection\n#\n\# @param id - escalation id\n # @param test_param[blaah] - testing hash parameters\n# Returns a collection of escalations visible to user\n"
+        mc = MethodComments.new string
+        mc.params.should == {'id' => 'escalation id', 'test_param[blaah]' => 'testing hash parameters'}
+      end
     end
 
     context 'no params' do

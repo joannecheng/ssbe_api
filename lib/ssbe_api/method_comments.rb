@@ -15,7 +15,7 @@ class MethodComments
 
   def params
     params_hash = {}
-    params_line_regex = /@param\s+?(\w+)\s+?-\s+?(.+)/
+    params_line_regex = /@param\s+?(\S+)\s+?-\s+?(.+)/
     middle_lines = @comments[1..-2]
     return params_hash if middle_lines.nil?
 
